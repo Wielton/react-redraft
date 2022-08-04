@@ -9,8 +9,12 @@ class PlayerCard extends Component {
         return (
             <div className="PlayerCard">
                 <img src={this.props.logoURL} alt={this.props.team} />
-                <h1>{this.props.name}</h1>
-                
+                <h2>{this.props.name}</h2>
+                <div>
+                    <p>Position: {this.props.position}</p>
+                    <p>Team: {this.props.team}</p>
+                    <p>ADP: {this.props.adp}</p>
+                </div>
             </div>
         );
     }
