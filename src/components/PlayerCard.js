@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button from 'react-bootstrap/Button';
 import '../styling/PlayerCard.css';
 
 
@@ -8,12 +9,17 @@ class PlayerCard extends Component {
         
         return (
             <div className="PlayerCard">
-                <img src={this.props.logoURL} alt={this.props.team} />
-                <h2>{this.props.name}</h2>
                 <div>
-                    <p>Position: {this.props.position}</p>
-                    <p>Team: {this.props.team}</p>
-                    <p>ADP: {this.props.adp}</p>
+                    <img className="PlayerLogo" src={this.props.logoURL} alt={this.props.team} />
+                    {this.props.name}
+                </div>
+                <div>
+                    {this.props.position}
+                    {this.props.team}
+                    {this.props.adp}
+                </div>
+                <div>
+                    <Button variant="primary">Add</Button>
                 </div>
             </div>
         );

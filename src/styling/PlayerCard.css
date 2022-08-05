@@ -1,14 +1,12 @@
 .PlayerCard {
-    display: flex;
-    flex-wrap: wrap;
-    width: 300px;
-    padding: 10px;
-    margin: 1rem;
+    display: grid;
+    width: 400px;
+    height: 75px;
     box-shadow: 7px 10px 12px -5px rgba(0,0,0,0.56);
     border-radius: 10px;
     background-color: #eceff1;
 }
 .PlayerCard img {
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
 }

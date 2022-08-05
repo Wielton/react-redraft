@@ -7,6 +7,7 @@ class Header extends Component {
         return (
             <header>
                 <div>
+                    <h1>reDraft</h1>
                 </div>
                 <NavBar />
             </header>
