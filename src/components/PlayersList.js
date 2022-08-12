@@ -9,9 +9,7 @@ const PlayerList = () => {
     const cookies = new Cookies();
     const [playerList, getPlayerList] = useState([]);
     
-    const fetchDraftList = () => {
-        // Load data
-        
+    useEffect(() => {
         axios.get(process.env.REACT_APP_PLAYERS_API_KEY+"players", {
             params: {
                 'sessionToken' : cookies.get('sessionToken')
@@ -25,12 +23,7 @@ const PlayerList = () => {
         }).catch((error)=>{
             console.log(error);
         })
-    
-        // set state with that data
-    }
-    useEffect(() => {
-        fetchDraftList();
-    })
+    }, [])
     return (
             <div>
                 <h1>AVAILABLE PLAYERS</h1>
