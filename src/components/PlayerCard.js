@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Button from 'react-bootstrap/Button';
+import { ListGroup } from 'react-bootstrap';
 import '../styling/PlayerCard.css';
 
 
@@ -8,20 +8,17 @@ class PlayerCard extends Component {
     render() { 
         
         return (
-            <div className="PlayerCard">
-                <div>
-                    <img className="PlayerLogo" src={this.props.logoURL} alt={this.props.team} />
-                    {this.props.name}
+            <ListGroup.Item className="PlayerCard">
+                <div>{this.props.team}
+                <img className="PlayerLogo" src={this.props.logoURL} alt={this.props.team} />
                 </div>
-                <div>
-                    {this.props.position}
-                    {this.props.team}
-                    {this.props.adp}
-                </div>
-                <div>
-                    <Button variant="primary">Add</Button>
-                </div>
-            </div>
+                <div>{this.props.name}</div>
+                <div>{this.props.position}</div>
+                <div>{this.props.adp}</div>
+                
+                    
+                
+            </ListGroup.Item>
         );
     }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PlayerList from "../src/routes/PlayersList"
+import DraftBoard from "../src/routes/DraftBoard";
+import LoginFunc from "../src/routes/ManLogin";
 import './index.css';
 import App from './App';
 
@@ -10,7 +11,8 @@ root.render(
   <BrowserRouter>
   <Routes>
   <Route path="/" element={<App />} />
-  <Route path="PlayersList" element={<PlayerList />} />
+  <Route path='/ManLogin' element={<LoginFunc />} />
+  <Route path="DraftBoard" element={<DraftBoard />} />
 </Routes>
   </BrowserRouter>
 );
