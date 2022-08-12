@@ -8,11 +8,11 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-  <Routes>
-  <Route path="/" element={<App />} />
-  <Route path='/ManLogin' element={<LoginFunc />} />
-  <Route path="DraftBoard" element={<DraftBoard />} />
-</Routes>
-  </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path='/ManLogin' element={<LoginFunc />} />
+        <Route path="DraftBoard" element={<DraftBoard />} />
+      </Routes>
+    </BrowserRouter>
 );

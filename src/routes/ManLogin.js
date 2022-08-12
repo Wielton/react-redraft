@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import { Button, Modal} from 'react-bootstrap';
 import axios from 'axios';
-
+import Cookies from 'universal-cookie';
 import { Router } from 'react-router-dom';
 
 
 
 const LoginFunc = () => {
+    const cookies = new Cookies();
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");
     const show = useState(false)
@@ -27,7 +28,8 @@ const LoginFunc = () => {
             loginPassword: userPassword
         }).then((response) => {
             console.log(response);
-            Router.push('/Draftboard');
+            cookies.set('sessionToken', response.data.sessionToken);
+            Router.navigate('/Draftboard');
         }).catch((error) => {
             console.log(error);
         })
