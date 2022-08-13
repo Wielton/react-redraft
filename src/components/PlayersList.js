@@ -20,6 +20,7 @@ const PlayerList = () => {
             const allPlayers = response.data;
             getPlayerList(allPlayers);
             console.log(response.data);
+            
         }).catch((error)=>{
             console.log(error);
         })
