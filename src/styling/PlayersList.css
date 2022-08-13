@@ -1,9 +1,23 @@
-.PlayersList {
+.adp-list {
     justify-content: center;
     margin: auto;
-    width: 500px;
+}
+.scroller{
+    display: grid;
+    grid-column: 1/5;
+    gap: 3px;
+    justify-content: center;
+    
+    overflow: auto;
     border: 1px;
     box-shadow: 7px 10px 12px -5px rgba(0,0,0,0.56);
-    border-radius: 10px;
-    background-color: #383838;
 }
+
+.titles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 350px;
+    width: 400px;
+    margin: auto;
+}
+

@@ -12,7 +12,7 @@ const App = () => {
   // const cookies = new Cookies();
   // const [authorized, setAuthorization] = useState(false);
   // const token = cookies.get('sessionToken');
-
+  
 
   return (
     <div className="App">

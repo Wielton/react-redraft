@@ -10,6 +10,7 @@ const LoginPage = () => {
     const cookies = new Cookies();
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");
+    // const [authenticated, setAuthenticated] = useState(cookies.get('sessionToken') || false);
     const show = useState(false)
     const handleShow = (show) => {
         show(true)
@@ -29,6 +30,7 @@ const LoginPage = () => {
         }).then((response) => {
             console.log(response);
             cookies.set('sessionToken', response.data.sessionToken);
+            // setAuthenticated(true);
             Router.navigate('/Draftboard');
         }).catch((error) => {
             console.log(error);
