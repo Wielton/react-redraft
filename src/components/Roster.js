@@ -31,6 +31,7 @@ const Roster = () => {
                     
                     {roster.map((p) => (
                         <PlayerCard key={p.playerId} id={p.playerId} name={p.name} position={p.position} team={p.team} logoURL={p.logoUrl}/>
+                        
                     ))}
                 </ListGroup>
             </div>
