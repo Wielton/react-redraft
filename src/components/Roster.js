@@ -3,10 +3,11 @@ import axios from 'axios';
 import '../styling/PlayersList.css';
 import PlayerCard from './PlayerCard';
 import Cookies from 'universal-cookie';
+import '../styling/Roster.css';
 
 const Roster = () => {
-    
     const [roster, getRoster] = useState([]);
+    
     
     useEffect(() => {
         const cookies = new Cookies();
@@ -19,19 +20,20 @@ const Roster = () => {
         }).then(response=>{
             const rosterData = response.data;
             getRoster(rosterData);
-            console.log(response.data);
         }).catch((error)=>{
             console.log(error);
         })
     }, [])
     return (
-            <div>
+            <div className="container-roster">
                 <h1>ROSTER</h1>
                 <div className="scroller">
                 
                     {roster.map((p) => (
+                    
+
                         <PlayerCard key={p.playerId} id={p.playerId} name={p.name} position={p.position} team={p.team} logoURL={p.logoUrl}/>
-                        
+    
                     ))}
                 </div>
             </div>

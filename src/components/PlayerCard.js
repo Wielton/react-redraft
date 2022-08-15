@@ -1,12 +1,11 @@
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
 import '../styling/PlayerCard.css';
 
 
 const PlayerCard = (props) => {
     
     return (
-            <ListGroup.Item className="PlayerCard">
+            <div className="PlayerCard">
                 <div>{props.team}
                 <img className="PlayerLogo" src={props.logoURL} alt={props.team} />
                 </div>
@@ -15,7 +14,7 @@ const PlayerCard = (props) => {
                 <div>{props.adp}</div>
                     
                 
-            </ListGroup.Item>
+            </div>
         );
 }
 

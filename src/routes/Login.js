@@ -1,27 +1,24 @@
-import React, {useState} from 'react'
-import { Button, Modal} from 'react-bootstrap';
+import React, {useState} from 'react';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import { Router } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import '../styling/LoginForm.css'
 
-
+// Handle login and logout
+// Upon successful login, a 'sessionToken' is set for global retrieval
+// Create an authentication function that will retrieve the 'sessionToken' cookie
+//   - this function has kind of been created in the Authent.js file. 
+//   - Do I use this file for all authentication or a seperate file?
 
 const LoginPage = () => {
     const cookies = new Cookies();
+    const navigate = useNavigate();
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");
-    // const [authenticated, setAuthenticated] = useState(cookies.get('sessionToken') || false);
-    const show = useState(false)
-    const handleShow = (show) => {
-        show(true)
-    }
     const handleSubmit = (e) => {
         e.preventDefault();
     }
-    const handleClose = () => {
-        show(false)
-    }
-
+    
     const handleLogin = () => {
         
         axios.post(process.env.REACT_APP_PLAYERS_API_KEY+"manager-login",{
@@ -30,31 +27,26 @@ const LoginPage = () => {
         }).then((response) => {
             console.log(response);
             cookies.set('sessionToken', response.data.sessionToken);
-            // setAuthenticated(true);
-            Router.navigate('/Draftboard');
+            navigate('/RosterPortal');
         }).catch((error) => {
             console.log(error);
         })
     }
+    
     return (
-        <div className="LoginForm">
-        <Button variant="primary" onClick={handleShow}>
-        Login
-            </Button>
-            <form>
-                <Modal 
+        <div>
+        
+                <form 
+                    className="login-form"
                     size="md"
                     aria-labelledby="contained-modal-title-vcenter"
-                    centered show={show} 
-                    onHide={handleClose} 
                     onSubmit={handleSubmit}
-                    animation={false}
                     >
                 
-                <Modal.Header>
-                <Modal.Title>Login To reDraft Fantasy Football</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+                <div>
+                <div>Login To reDraft Fantasy Football</div>
+                </div>
+                <div>
                 <div>
                 <label htmlFor="email">Email</label>
                 <input 
@@ -75,17 +67,14 @@ const LoginPage = () => {
                     id="password"
                 />
             </div>
-        </Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={handleLogin}>
-                    Login
-                </Button>
-            </Modal.Footer>
+        </div>
+            <div>
                 
-            </Modal>
+                <button variant="primary" onClick={handleLogin}>
+                    Login
+                </button>
+            </div>
+                
             </form>
         </div>
         )
