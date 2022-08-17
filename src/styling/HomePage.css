@@ -1,0 +1,18 @@
+.home-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.home-logo {
+    width: 100%;
+    height: auto;
+}
+/* .home-row-one {
+    
+}
+
+.home-row-two {
+} */
+

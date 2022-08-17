@@ -1,0 +1,16 @@
+.container-draftboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+}
+
+.roster {
+    display: block;
+    grid-column: 1/2;
+}
+
+.adp {
+    display: block;
+    grid-column: 3/4;
+    height: 100%;
+}
