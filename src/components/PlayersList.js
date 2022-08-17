@@ -5,8 +5,10 @@ import PlayerCard from './PlayerCard';
 import Cookies from 'universal-cookie';
 
 const PlayerList = () => {
-    
+    // Initialize state of player list array
     const [playerList, getPlayerList] = useState([]);
+
+    // This hook will 
     useEffect(() => {
         const cookies = new Cookies();
         
